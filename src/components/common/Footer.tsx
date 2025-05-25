@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import boCongThuongImage from "@/assets/image/bo-cong-thuong.png";
@@ -16,10 +15,10 @@ export default function Footer() {
         style={{ backgroundImage: `url(${bgFooter.src})` }}
         aria-hidden="true"
       />
-      <div className="relative z-10 max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="relative z-10 container mx-auto pt-24 flex justify-between gap-10">
         {/* Cột 1: Thông tin công ty */}
-        <div className="space-y-2">
-          <h2 className="font-bold text-[#001B4E] uppercase">
+        <div className="space-y-2 w-[560px]">
+          <h2 className="font-bold text-[#013065] uppercase">
             VIET HUNG AUTO PRODUCTION TRADING JOINT STOCK COMPANY
           </h2>
           <p>
@@ -59,20 +58,20 @@ export default function Footer() {
 
         {/* Cột 2: Sitemap */}
         <div className="space-y-2">
-          <h3 className="font-bold text-[#001B4E] text-lg">Sitemap</h3>
-          <p>About</p>
-          <p>Article</p>
-          <p>Cart</p>
-          <p>Contact</p>
+          <h3 className="font-bold text-[#013065] text-lg mb-7">Sitemap</h3>
+          <p className="cursor-pointer">About</p>
+          <p className="cursor-pointer">Article</p>
+          <p className="cursor-pointer">Cart</p>
+          <p className="cursor-pointer">Contact</p>
         </div>
 
         {/* Cột 3: Legal */}
         <div className="space-y-2">
-          <h3 className="font-bold text-[#001B4E] text-lg">Legal</h3>
-          <p className="font-semibold">Privacy Policy</p>
-          <p>Cookie policy</p>
-          <p>Delivery policy</p>
-          <p>FAQs</p>
+          <h3 className="font-bold text-[#013065] text-lg mb-7">Legal</h3>
+          <p className="font-semibold cursor-pointer">__ Privacy Policy</p>
+          <p className="cursor-pointer">Cookie policy</p>
+          <p className="cursor-pointer">Delivery policy</p>
+          <p className="cursor-pointer">FAQs</p>
         </div>
 
         {/* Cột 4: App Download */}
@@ -99,7 +98,7 @@ export default function Footer() {
           {/* Language switcher */}
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1 hover:opacity-80 transition min-w-16"
+            className="flex items-center gap-1 hover:opacity-80 transition min-w-16 float-right"
           >
             {language === "vi" ? (
               <Icon icon="emojione:flag-for-vietnam" width="32" height="32" />
@@ -109,6 +108,17 @@ export default function Footer() {
             <span className="font-medium uppercase">{language}</span>
           </button>
         </div>
+      </div>
+      <div
+        className="absolute top-10 right-8 border-primary border-solid p-2 border rounded-full cursor-pointer hover:bg-primary transition duration-300 z-50"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <Icon
+          icon="oui:arrow-up"
+          width="24"
+          height="24"
+          className="text-primary hover:text-white"
+        />
       </div>
     </footer>
   );

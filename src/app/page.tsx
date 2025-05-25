@@ -7,7 +7,6 @@ import CategoryDropdownMenu from "@/components/products/CategoryDropdownMenu";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import StoreHighlights from "@/components/common/StoreHighlights";
 import Footer from "@/components/common/Footer";
-import { dummyProducts } from "@/constants";
 import subtractIcon from "@/assets/image/subtract-icon.png";
 import phoneIcon from "@/assets/image/phone-icon.png";
 import mobileIcon from "@/assets/image/mobile-icon.png";
@@ -26,12 +25,14 @@ export default function ProductPage() {
       <UserHeader />
       {/* Category, menu */}
       <CategoryDropdownMenu />
-      <div className="bg-second-background text-sm text-gray-700 container mx-auto">
-        <Breadcrumb />
-        <HeroBanner />
-        <div className="container mx-auto px-0 py-6 flex justify-between">
+      <div className="bg-second-background text-sm text-gray-700 ">
+        <div className="w-full container mx-auto">
+          <Breadcrumb />
+          <HeroBanner />
+        </div>
+        <div className="container mx-auto py-6 flex justify-between">
           <ProductFilterSidebar />
-          <ProductGrid products={dummyProducts} />
+          <ProductGrid />
         </div>
       </div>
       <StoreHighlights />

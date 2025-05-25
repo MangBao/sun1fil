@@ -19,6 +19,11 @@ export default function Breadcrumb() {
     };
   });
 
+  breadcrumbs.unshift({
+    href: "#products",
+    label: "Sản phẩm",
+  });
+
   return (
     <nav className="py-3 px-4 text-sm text-gray-600">
       <ol className="flex items-center space-x-1">

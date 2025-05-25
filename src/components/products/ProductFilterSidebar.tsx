@@ -5,6 +5,7 @@ import filterIcon from "@/assets/image/filter-icon.png";
 import Image from "next/image";
 import { filterSections } from "@/constants";
 import { motion, AnimatePresence } from "framer-motion";
+import { useFilterStore } from "@/stores/filterStore";
 
 const ProductFilterSidebar = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>(
@@ -20,9 +21,16 @@ const ProductFilterSidebar = () => {
     }
   );
 
-  const [selectedFilters, setSelectedFilters] = useState<
-    Record<string, string[]>
-  >({});
+  const { selectedFilters, setFilter, removeFilter } = useFilterStore();
+
+  const handleCheckboxChange = (sectionKey: string, value: string) => {
+    const isChecked = selectedFilters[sectionKey]?.includes(value);
+    if (isChecked) {
+      removeFilter(sectionKey, value);
+    } else {
+      setFilter(sectionKey, value);
+    }
+  };
 
   const toggleSection = (key: string) => {
     setOpenSections((prev) => ({
@@ -31,24 +39,10 @@ const ProductFilterSidebar = () => {
     }));
   };
 
-  const handleCheckboxChange = (sectionKey: string, value: string) => {
-    setSelectedFilters((prev) => {
-      const currentValues = prev[sectionKey] || [];
-      const isChecked = currentValues.includes(value);
-
-      return {
-        ...prev,
-        [sectionKey]: isChecked
-          ? currentValues.filter((v) => v !== value)
-          : [...currentValues, value],
-      };
-    });
-  };
-
   return (
     <aside className="w-full max-w-[300px] p-4 border rounded-md bg-white shadow-sm text-sm">
       <div className="flex items-center gap-2 mb-4">
-        <Image src={filterIcon} alt="Filter icon" className="w-5 h-5" />
+        <Image src={filterIcon} alt="Filter icon" className="w-8 h-8" />
         <h2 className="text-lg font-semibold text-blue-600">Bộ Lọc</h2>
       </div>
 

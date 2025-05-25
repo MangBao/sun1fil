@@ -20,7 +20,10 @@ export default function CategoryDropdownMenu() {
           >
             <button className="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center gap-2">
               <div className="flex items-center gap-2">
-                <Icon icon="ion:reorder-three-outline" className="text-lg text-white" />
+                <Icon
+                  icon="ion:reorder-three-outline"
+                  className="text-lg text-white"
+                />
                 <span className="text-white text-sm">Danh Mục Sản Phẩm</span>
               </div>
               <svg
@@ -78,7 +81,7 @@ export default function CategoryDropdownMenu() {
                     {hoveredCategory?.subcategories.map((sub) => (
                       <div
                         key={sub.id}
-                        className="bg-gray-100 hover:bg-gray-200 text-sm font-medium p-2 rounded flex justify-center items-center text-center"
+                        className="bg-gray-100 hover:bg-gray-200 text-sm font-medium p-2 rounded flex justify-center items-center text-center h-18 cursor-pointer"
                       >
                         {sub.name}
                       </div>
@@ -113,115 +116,57 @@ export default function CategoryDropdownMenu() {
                   </div>
                 </div>
               </div>
-
-              //   <div
-              //     className="absolute left-0 top-full bg-white shadow-lg rounded pt-1 w-[750px] flex z-50"
-              //     onMouseEnter={() => setIsOpen(true)}
-              //   >
-              //     <div className="w-[200px] border-r divide-y">
-              //       {categories.map((cat) => (
-              //         <div
-              //           key={cat.id}
-              //           onMouseEnter={() => setHoveredCategory(cat)}
-              //           className={`flex items-center gap-2 p-3 cursor-pointer hover:bg-blue-100 transition ${
-              //             hoveredCategory?.id === cat.id ? "bg-blue-100" : ""
-              //           }`}
-              //         >
-              //           <Image
-              //             src={cat.icon}
-              //             alt={cat.name}
-              //             width={24}
-              //             height={24}
-              //           />
-              //           <span className="text-sm font-medium">{cat.name}</span>
-              //         </div>
-              //       ))}
-              //     </div>
-
-              //     <div className="w-[270px] p-3 grid grid-cols-2 gap-2">
-              //       {hoveredCategory?.subcategories.map((sub) => (
-              //         <div
-              //           key={sub.id}
-              //           className="bg-gray-100 hover:bg-gray-200 text-sm font-medium p-2 rounded flex justify-center items-center"
-              //         >
-              //           {sub.name}
-              //         </div>
-              //       ))}
-              //     </div>
-
-              //     <div className="flex-1 px-4 py-3">
-              //       <div className="flex justify-between items-center mb-2">
-              //         <h4 className="text-sm font-semibold">Sản Phẩm Bán Chạy</h4>
-              //         <a
-              //           href="#"
-              //           className="text-xs text-primary hover:underline"
-              //         >
-              //           Xem tất cả
-              //         </a>
-              //       </div>
-              //       <div className="grid grid-cols-5 gap-2">
-              //         {bestSellingProducts.map((product, idx) => (
-              //           <div
-              //             key={idx}
-              //             className="bg-white border rounded p-2 text-center"
-              //           >
-              //             <Image
-              //               src={product.image}
-              //               alt={product.title}
-              //               width={80}
-              //               height={80}
-              //               className="mx-auto"
-              //             />
-              //             <h5 className="text-xs mt-2 line-clamp-2 leading-tight">
-              //               {product.title}
-              //             </h5>
-              //             <div className="mt-1 text-red-600 text-sm font-semibold">
-              //               {product.price.toLocaleString()} đ
-              //             </div>
-              //             <div className="text-xs text-gray-400 line-through">
-              //               {product.oldPrice?.toLocaleString()} đ
-              //             </div>
-              //             <div className="text-xs text-red-500 font-bold">
-              //               {product.discount}
-              //             </div>
-              //           </div>
-              //         ))}
-              //       </div>
-              //     </div>
-              //   </div>
             )}
           </div>
         </li>
         <li>
-          <a href="http://">
+          <a
+            href="http://"
+            className="hover:text-primary transition-colors duration-200"
+          >
             <span>Về chúng tôi</span>
           </a>
         </li>
         <li>
-          <a href="http://">
+          <a
+            href="http://"
+            className="hover:text-primary transition-colors duration-200"
+          >
             <span>Bài viết</span>
           </a>
         </li>
         <li>
-          <a href="http://">
+          <a
+            href="http://"
+            className="hover:text-primary transition-colors duration-200"
+          >
             <span>Catalog</span>
           </a>
         </li>
         <li>
-          <a href="http://">
+          <a
+            href="http://"
+            className="hover:text-primary transition-colors duration-200"
+          >
             <span>Liên hệ</span>
           </a>
         </li>
       </ul>
       <ul className="flex list-none items-center gap-6">
         <li>
-          <a href="" className="flex items-center gap-1">
+          <a
+            href=""
+            className="flex items-center gap-1 hover:text-primary transition-colors duration-200"
+          >
             <Icon icon="mdi:clock" className="text-[20px] text-primary" />
             <span>Hỗ trợ 24/7</span>
           </a>
         </li>
         <li>
-          <a href="" className="flex items-center gap-1">
+          <a
+            href=""
+            className="flex items-center gap-1 hover:text-primary transition-colors duration-200"
+          >
             <Icon
               icon="solar:hand-money-bold"
               className="text-[20px] text-primary"
@@ -230,7 +175,10 @@ export default function CategoryDropdownMenu() {
           </a>
         </li>
         <li>
-          <a href="" className="flex items-center gap-1">
+          <a
+            href=""
+            className="flex items-center gap-1 hover:text-primary transition-colors duration-200"
+          >
             <Icon
               icon="mingcute:truck-fill"
               className="text-[20px] text-primary"
@@ -239,7 +187,10 @@ export default function CategoryDropdownMenu() {
           </a>
         </li>
         <li>
-          <a href="" className="flex items-center gap-1">
+          <a
+            href=""
+            className="flex items-center gap-1 hover:text-primary transition-colors duration-200"
+          >
             <Icon
               icon="solar:refresh-circle-bold"
               className="text-[20px] text-primary"
