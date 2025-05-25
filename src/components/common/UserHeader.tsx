@@ -10,7 +10,9 @@ import { cartProducts } from "@/constants";
 
 export default function UserHeader() {
   const [showCartPreview, setShowCartPreview] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [cartCount, setCartCount] = useState<number>(12);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const { language, toggleLanguage } = useLanguage();
