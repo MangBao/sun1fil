@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffffff;
+    --second-background: #f5f6f8;
+    --foreground: #171717;
+    --primary: #0373F3;
+    --primary-blue-start: #0D57C6;
+    --primary-blue-mid: #37CFFF;
+    --primary-blue-end: #0F5ED6;
+    --primary-yellow: #FACA4A;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+p,
+span,
+li,
+a,
+button,
+input,
+textarea {
+    font-size: inherit;
+    line-height: inherit;
+}
