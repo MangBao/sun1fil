@@ -1,24 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import ProductCard from "./ProductCard";
-import { ProductGridProps } from "@/types/product";
 import { PRICE_OPTIONS, SORT_BUTTONS } from "@/constants";
 import { Icon } from "@iconify/react";
+import { useFilteredProducts } from "@/hooks/useFilteredProducts";
+import { useFilterStore } from "@/stores/filterStore";
 
-const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
-  const [selectedSort, setSelectedSort] = useState<string | null>("Liên quan");
-  const [priceSort, setPriceSort] = useState<string | null>(null);
+const ProductGrid = () => {
+  const { filteredProducts, loading } = useFilteredProducts();
+  const { sort, priceSort, setSort, setPriceSort } = useFilterStore();
 
   const handleSortChange = (option: string) => {
-    setSelectedSort(option);
+    setSort(option);
   };
 
   const handlePriceSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setPriceSort(e.target.value || null);
+    const value = e.target.value;
+    setPriceSort(value || null);
   };
 
   return (
-    <div className="w-full px-4 md:px-6 lg:px-8 max-w-screen-xl mx-auto">
+    <div className="w-full px-4 pl-8 md:px-6 lg:pr-1 max-w-screen-xl mx-auto">
       <div className="md:flex block justify-between items-center">
         {/* Title */}
         <h2 className="text-xl font-semibold mb-4">Danh sách sản phẩm</h2>
@@ -28,7 +30,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
           <h3 className="px-4">Sắp xếp theo</h3>
 
           {SORT_BUTTONS.map((option) => {
-            const isSelected = selectedSort === option;
+            const isSelected = sort === option;
 
             return (
               <button
@@ -73,9 +75,15 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {products.slice(0, 16).map((product, idx) => (
-          <ProductCard key={idx} {...product} />
-        ))}
+        {loading ? (
+          <p>Đang tải sản phẩm...</p>
+        ) : filteredProducts.length === 0 ? (
+          <p>Không tìm thấy sản phẩm nào.</p>
+        ) : (
+          filteredProducts
+            .slice(0, 16)
+            .map((product, idx) => <ProductCard key={idx} {...product} />)
+        )}
       </div>
     </div>
   );

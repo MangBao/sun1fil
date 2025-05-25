@@ -6,13 +6,11 @@ export default function StoreHighlights() {
       <div className="">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 container mx-auto">
           {/* Item 1 */}
-          <div className="flex items-start gap-3 p-5 bg-white rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-5 bg-white rounded-xl shadow-sm">
             <div className="bg-[#E6F1FF] p-2 rounded-full">
               <Icon
-                className="text-primary"
+                className="text-primary w-10 h-10"
                 icon="fluent:wallet-credit-card-20-filled"
-                width="20"
-                height="20"
               />
             </div>
             <div>
@@ -24,13 +22,11 @@ export default function StoreHighlights() {
           </div>
 
           {/* Item 2 */}
-          <div className="flex items-start gap-3 p-5 bg-white rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-5 bg-white rounded-xl shadow-sm">
             <div className="bg-[#E6F1FF] p-2 rounded-full">
               <Icon
-                className="text-primary"
+                className="text-primary w-10 h-10"
                 icon="streamline:customer-support-1-solid"
-                width="14"
-                height="14"
               />
             </div>
             <div>
@@ -42,13 +38,11 @@ export default function StoreHighlights() {
           </div>
 
           {/* Item 3 */}
-          <div className="flex items-start gap-3 p-5 bg-white rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-5 bg-white rounded-xl shadow-sm">
             <div className="bg-[#E6F1FF] p-2 rounded-full">
               <Icon
-                className="text-primary"
+                className="text-primary w-10 h-10"
                 icon="mingcute:truck-fill"
-                width="24"
-                height="24"
               />
             </div>
             <div>
@@ -60,13 +54,11 @@ export default function StoreHighlights() {
           </div>
 
           {/* Item 4 */}
-          <div className="flex items-start gap-3 p-5 bg-white rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 p-5 bg-white rounded-xl shadow-sm">
             <div className="bg-[#E6F1FF] p-2 rounded-full">
               <Icon
-                className="text-primary"
+                className="text-primary w-10 h-10"
                 icon="ix:package-filled"
-                width="20"
-                height="20"
               />
             </div>
             <div>
